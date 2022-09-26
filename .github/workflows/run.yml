@@ -32,8 +32,6 @@ jobs:
        - name: Loop workflow
          continue-on-error: true
          run: |
-              cd ..
-              cd loop || exit 1
               echo $(date -u +%T%P) >> loop.txt
               git add loop.txt
               git commit -m "Workflow : Loop $(date -u +%D-%T%P)"
