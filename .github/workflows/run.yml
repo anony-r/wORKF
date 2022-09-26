@@ -4,9 +4,6 @@ name: Workflow
 on:
     push:
     workflow_dispatch:
-    workflow_run:
-      workflows: ["Workflow"]
-      types: ["completed"]
     
 jobs:
   build:
