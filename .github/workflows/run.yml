@@ -21,6 +21,8 @@ jobs:
        - name: cloning repo
          continue-on-error: true
          run: |
+           git config --global user.email "xyz@gmail.com"
+           git config --global user.name "Your Name"
            git clone https://${{ secrets.URL }} main
        - name: Run
          timeout-minutes: 350
