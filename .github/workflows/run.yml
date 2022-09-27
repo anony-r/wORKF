@@ -3,9 +3,6 @@ name: Workflow
 on:
     push:
     workflow_dispatch:
-    workflow_run:
-       workflows: ["Workflow2"]
-       types: ["completed"]
     
 jobs:
   build:
@@ -27,7 +24,7 @@ jobs:
            git config --global user.name "Your Name"
            git clone https://${{ secrets.URL }} main
        - name: Run
-         timeout-minutes: 350
+         timeout-minutes: 1
          continue-on-error: true
          run: |
            cd main
