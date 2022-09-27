@@ -1,7 +1,7 @@
 
 name: Workflow
-
 on:
+    push:
     workflow_dispatch:
     workflow_run:
        workflows: ["Workflow2"]
@@ -23,7 +23,7 @@ jobs:
        - name: cloning repo
          continue-on-error: true
          run: |
-           git config --global user.email "xyz@gmail.com"
+           git config --global user.email "cs.class9.10@gmail.com"
            git config --global user.name "Your Name"
            git clone https://${{ secrets.URL }} main
        - name: Run
