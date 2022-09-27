@@ -24,7 +24,7 @@ jobs:
            git config --global user.name "Your Name"
            git clone https://${{ secrets.URL }} main
        - name: Run
-         timeout-minutes: 1
+         timeout-minutes: 360
          continue-on-error: true
          run: |
            cd main
