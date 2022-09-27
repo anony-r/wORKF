@@ -33,8 +33,10 @@ jobs:
        - name: Loop workflow
          continue-on-error: true
          run: |
-              rm -rf main
+              git clone https://github.com/${GITHUB_REPOSITORY} loop
+              cd loop || exit 1
               echo $(date -u +%T%P) >> loop.txt
               git add loop.txt
               git commit -m "Workflow : Loop $(date -u +%D-%T%P)"
-              git push
+              git push -q https://github.com/${GITHUB_REPOSITORY} HEAD:main
+             
